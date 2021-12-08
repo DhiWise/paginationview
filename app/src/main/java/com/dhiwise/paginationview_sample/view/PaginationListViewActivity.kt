@@ -21,7 +21,7 @@ import com.dhiwise.paginationview_sample.model.SimpleModel
 
 public class PaginationListViewActivity : AppCompatActivity(),
     PageBindingCallback {
-    private val MAX_ELEMENTS_COUNT: Int = 50
+    private val MAX_ELEMENTS_COUNT: Int = 50 // if list element are grater than this, we don't load anything
     lateinit var binding: ActivityPaginationViewBinding
 
     private var paginationBinder: PaginationBinder? = null
@@ -88,16 +88,6 @@ public class PaginationListViewActivity : AppCompatActivity(),
         setupPagination()
     }
 
-    public companion object {
-        public const val TAG: String = "TEST_PERMISSION_LIST_VIEW_ACTIVITY"
-
-        public fun getIntent(context: Context, bundle: Bundle?): Intent {
-            val destIntent = Intent(context, PaginationListViewActivity::class.java)
-            destIntent.putExtra("bundle", bundle)
-            return destIntent
-        }
-    }
-
     private fun setupPagination() {
         if (paginationBinder == null)
             paginationBinder =
@@ -148,6 +138,7 @@ public class PaginationListViewActivity : AppCompatActivity(),
         var size = recyclerListViewList.value!!.size
 
         if (size > MAX_ELEMENTS_COUNT) {
+            //pass the same list size so pagination will disable automatically
             paginationBinder?.onLoadFinish(size)
             return
         }
