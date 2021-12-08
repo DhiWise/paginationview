@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PaginationView">
+        <attr name="title" format="string" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="titleTextSize" format="dimension" />
+
+        <attr name="message" format="string" />
+        <attr name="messageTextColor" format="reference|color" />
+        <attr name="messageTextSize" format="reference|dimension" />
+
+        <attr name="image" format="reference" />
+        <attr name="imageUrl" format="string" />
+        <attr name="noDataVewBg" format="reference" />
+        <attr name="customNoDataVew" format="reference" />
+
+        <attr name="listLayoutManager" format="enum">
+            <enum name="linear" value="1" />
+            <enum name="grid" value="2" />
+            <enum name="staggered" value="3" />
+        </attr>
+
+        <attr name="spanCount" format="reference|integer" />
+        <attr name="itemSpacing" format="dimension" />
+
+    </declare-styleable>
+</resources>

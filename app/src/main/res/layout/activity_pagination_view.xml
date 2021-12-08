@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <LinearLayout
+        android:id="@+id/linearGroup23"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:id="@+id/linearGroup20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                app:contentInsetStart="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearGroup21"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/listButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        />
+
+                    <Switch
+                        android:id="@+id/switchNoData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="14dp"
+                        android:minHeight="48dp"
+                        android:text="Show No Data View " />
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@android:color/darker_gray"/>
+
+        <com.dhiwise.paginationview.pagination.view.PaginationView
+            android:id="@+id/paginationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:image="@drawable/ic_no_data_found"
+            app:listLayoutManager="linear"
+            app:title="@string/msg_no_data_found"
+            app:itemSpacing="12dp"
+            />
+
+    </LinearLayout>
+
+</layout>
+
