@@ -1,4 +1,4 @@
-package com.dhiwise.paginationview.pagination.view
+package com.dhiwise.view
 
 import android.content.Context
 import android.content.res.TypedArray

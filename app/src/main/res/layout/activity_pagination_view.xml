@@ -59,7 +59,7 @@
             android:layout_height="0.8dp"
             android:background="@android:color/darker_gray"/>
 
-        <com.dhiwise.paginationview.pagination.view.PaginationView
+        <com.dhiwise.view.PaginationView
             android:id="@+id/paginationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

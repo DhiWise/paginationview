@@ -2,7 +2,7 @@
 Handy library to integrate pagination, which allow no data layout, refresh layout, recycler view in one view and easy way to bind pagination in app.
 
 ## Features
-The Pagination View is combination of Refresh Layout, No Data Layout Container, And Recycler View which enable all funcnality in single view by using this view, You can do the following things:
+The Pagination View is combination of Refresh Layout, No Data Layout Container, And Recycler View which enable all functionality in single view by using this view, You can do the following things:
 
 1. Support for Refresh Callbacks
 2. Support for No Data Layout
@@ -43,7 +43,7 @@ The Pagination View is combination of Refresh Layout, No Data Layout Container, 
 ### Step 1: Create PaginationView in XML
 
 ```xml
-<com.dhiwise.paginationview.pagination.view.PaginationView
+<com.dhiwise.view.PaginationView
             android:id="@+id/paginationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -90,19 +90,19 @@ public class YourActivity : AppCompatActivity(),
         currentLoadedItemCnt: Int,
         pageElementCount: Int
     ) {
-        //TODO handle load next page
+        // TODO handle load next page
     }
 
     override fun onNoDataFound() {
-        //TODO handle on No data loaded
+        // TODO handle on No data loaded
     }
 
     override fun onAllItemLoaded() {
-        //TODO handle on data loaded
+        // TODO handle on data loaded
     }
 
     override fun getPaginationView(): PaginationView {
-        return paginationView //the pagination view object
+        return paginationView // the pagination view object
     }
 }
 ```
@@ -115,7 +115,7 @@ public class YourActivity : AppCompatActivity(),
     paginationBinder =
          PaginationBinder.buildWith(pageElementCount, this)
                     .setOnRefresh {
-                      //TODO handle the refresh callback
+                      // TODO handle the refresh callback
                     }
                     .build()
 
@@ -123,23 +123,41 @@ public class YourActivity : AppCompatActivity(),
 
 ### How to manage the page loading or refresh layout loading ?
 ```kotlin
-    //update the list and then call notify dataset change
+    // update the list and then call notify dataset change
     paginationView.adapter?.notifyDataSetChanged()
 
-    //call onLoadFinish of paginationBinder and pass the latest list element size count
+    // call onLoadFinish of paginationBinder and pass the latest list element size count
     paginationBinder?.onLoadFinish(updatedListSize)
 ```
 
 ### How do I manage no data layout ?
 ```kotlin
-    //When onLoadNext function called and at that time if you get empty list size from api or your dataset then just pass the empty list size
+    // When onLoadNext function called and at that time if you get empty list size from api
+    // or your dataset then just pass the empty list size
     paginationBinder.onLoadFinish(listSize)
 
-    //directly you want to show no data layout just pass zero
+    // directly you want to show no data layout just pass zero
     paginationBinder.onLoadFinish(0)
 
-    //you can do the same thing by using paginationView just call isNothingToLoad method with true as boolean argument.
+    // you can do the same thing by using paginationView
+    // just call isNothingToLoad method with true as boolean argument.
     paginationView.isNothingToLoad(true)
+```
+
+### How do I handle the rest api loading failure case ?
+If we are using the rest api to get element in page, sometimes we found some failure at that time,
+we can handle the case by following.
+
+```kotlin
+    // Step 1. invoke the load finish with the last list size.
+    paginationBinder.onLoadFinish(listSize)
+
+    // NOTE : by passing old list size the paginationBinder disable because which identifies nothing to load new in the list,
+    // and the loading view will removed from recycler view.
+
+    // Step 2. so we have to enable pagination again by using enable method of paginationBinder
+    paginationBinder?.enable(true)
+
 ```
 
 
@@ -181,5 +199,14 @@ First of all don't manage span for full width of custom loading view it will aut
                     val spanSize = 1 // your span size of LoadingView
                     spanSize
                 }
+         .build()
+```
+### How do I set custom loading threshold ?
+To add custom loading threshold you can use setThreshold method of PaginationOption which you can implement it when we are building the PaginationBinder object,
+by default threshold value is 1.
+
+```kotlin
+    paginationBinder = PaginationBinder.buildWith(pageElementCount, this)
+         .setThreshold(5)
          .build()
 ```

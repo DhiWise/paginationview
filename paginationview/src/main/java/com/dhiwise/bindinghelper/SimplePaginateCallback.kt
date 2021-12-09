@@ -1,4 +1,4 @@
-package com.dhiwise.paginationview.pagination.bindinghelper
+package com.dhiwise.bindinghelper
 
 import com.paginate.Paginate
 
