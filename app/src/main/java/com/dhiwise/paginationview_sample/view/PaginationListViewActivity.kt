@@ -7,10 +7,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
-import com.dhiwise.paginationview.pagination.bindinghelper.CustomLoadingItemHelper
-import com.dhiwise.paginationview.pagination.bindinghelper.PaginationBinder
-import com.dhiwise.paginationview.pagination.bindinghelper.PaginationBinder.PageBindingCallback
-import com.dhiwise.paginationview.pagination.view.PaginationView
+import com.dhiwise.pagination.bindinghelper.CustomLoadingItemHelper
+import com.dhiwise.pagination.bindinghelper.PaginationBinder
+import com.dhiwise.pagination.bindinghelper.PaginationBinder.PageBindingCallback
+import com.dhiwise.pagination.PaginationView
 import com.dhiwise.paginationview_sample.R
 import com.dhiwise.paginationview_sample.databinding.ActivityPaginationViewBinding
 import com.dhiwise.paginationview_sample.databinding.RowSimpleListItemBinding

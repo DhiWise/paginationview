@@ -43,7 +43,7 @@ The Pagination View is combination of Refresh Layout, No Data Layout Container, 
 ### Step 1: Create PaginationView in XML
 
 ```xml
-<com.dhiwise.paginationview.pagination.view.PaginationView
+<com.dhiwise.pagination.PaginationView
             android:id="@+id/paginationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
