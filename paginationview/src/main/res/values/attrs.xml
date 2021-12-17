@@ -6,12 +6,12 @@
         <attr name="titleTextSize" format="dimension" />
 
         <attr name="message" format="string" />
-        <attr name="messageTextColor" format="reference|color" />
-        <attr name="messageTextSize" format="reference|dimension" />
+        <attr name="messageTextColor" format="color" />
+        <attr name="messageTextSize" format="dimension" />
 
         <attr name="image" format="reference" />
         <attr name="imageUrl" format="string" />
-        <attr name="noDataVewBg" format="reference" />
+        <attr name="noDataVewBg" format="color" />
         <attr name="customNoDataVew" format="reference" />
 
         <attr name="listLayoutManager" format="enum">

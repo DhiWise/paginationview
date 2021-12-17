@@ -1,7 +1,5 @@
 package com.dhiwise.paginationview_sample.view
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -95,6 +93,10 @@ public class PaginationListViewActivity : AppCompatActivity(),
                     .setOnRefresh {
                         setupPagination()
                         recyclerListViewList.value = arrayListOf()
+                    }
+                    .setOnLoadingItemSpanCountCallback {
+                        val spanSize = 1 // your span size of LoadingView
+                        spanSize
                     }
                     .setCustomLoadingItemHelper(object :
                         CustomLoadingItemHelper(R.layout.loading_item) {
