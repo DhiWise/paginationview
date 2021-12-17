@@ -38,7 +38,7 @@ The Pagination View is combination of Refresh Layout, No Data Layout Container, 
   add the below to your app's build.gradle:
 
 ```groovy
-    implementation 'com.dhiwise.paginationView - TODO UPDATE'
+    implementation 'com.dhiwise:paginationview:1.0.0'
 ```
 ### Step 1: Create PaginationView in XML
 
