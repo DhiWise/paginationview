@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout>
-    <LinearLayout
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/linearGroup23"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/linearGroup20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarToolbar"
@@ -33,14 +32,12 @@
                     android:orientation="vertical">
 
 
-
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/listButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        />
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                     <Switch
                         android:id="@+id/switchNoData"
@@ -57,17 +54,16 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.8dp"
-            android:background="@android:color/darker_gray"/>
+            android:background="@android:color/darker_gray" />
 
-        <com.dhiwise.paginationview.pagination.view.PaginationView
+        <com.dhiwise.pagination.PaginationView
             android:id="@+id/paginationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:image="@drawable/ic_no_data_found"
-            app:listLayoutManager="linear"
-            app:title="@string/msg_no_data_found"
             app:itemSpacing="12dp"
-            />
+            app:listLayoutManager="linear"
+            app:title="@string/msg_no_data_found" />
 
     </LinearLayout>
 

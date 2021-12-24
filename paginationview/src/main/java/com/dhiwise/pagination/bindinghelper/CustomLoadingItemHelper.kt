@@ -1,4 +1,4 @@
-package com.dhiwise.paginationview.pagination.bindinghelper
+package com.dhiwise.pagination.bindinghelper
 
 import android.view.LayoutInflater
 import android.view.View

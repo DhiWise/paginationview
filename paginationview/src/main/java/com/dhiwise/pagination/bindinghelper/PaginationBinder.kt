@@ -1,4 +1,4 @@
-package com.dhiwise.paginationview.pagination.bindinghelper
+package com.dhiwise.pagination.bindinghelper
 
 import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
@@ -6,7 +6,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dhiwise.paginationview.pagination.view.PaginationView
+import com.dhiwise.pagination.PaginationView
 import com.paginate.Paginate
 import com.paginate.recycler.LoadingListItemSpanLookup
 

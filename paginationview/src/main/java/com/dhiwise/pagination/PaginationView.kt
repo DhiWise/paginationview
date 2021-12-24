@@ -1,4 +1,4 @@
-package com.dhiwise.paginationview.pagination.view
+package com.dhiwise.pagination
 
 import android.content.Context
 import android.content.res.TypedArray
@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
+import com.dhiwise.pagination.view.RecyclerItemDecoration
 import com.dhiwise.paginationview.R
 
 /**
