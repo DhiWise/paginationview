@@ -186,7 +186,7 @@ First of all don't manage span for full width of custom loading view it will aut
 
 v1.0.2
 
-- Updated README.MD
+- Updated README.md
 
 v1.0.1
 
